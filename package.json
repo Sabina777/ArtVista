@@ -1,0 +1,23 @@
+{
+  "name": "artvista",
+  "version": "1.0.0",
+  "description": "Online Art gallery platform built with Nodejs and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sabina777/ArtVista.git"
+  },
+  "author": "Sabina Prajapati",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sabina777/ArtVista/issues"
+  },
+  "homepage": "https://github.com/Sabina777/ArtVista#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
