@@ -27,6 +27,7 @@ app.use((req, res, next) => {
     .catch(err => console.log(err));
 });
 
+
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
