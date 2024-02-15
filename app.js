@@ -14,7 +14,7 @@ const User = require('./models/user');
 
 const MONGODB_URI =
 'mongodb+srv://kumar:Black-6594@cluster0.b2emiit.mongodb.net/?retryWrites=true&w=majority'
-  ;
+;
 
 const app = express();
 const store = new MongoDBStore({
@@ -32,14 +32,13 @@ const fileStorage = multer.diskStorage({
   }
 });
 
-
 const fileFilter = (req, file, cb) => {
   if (
     file.mimetype === 'image/png' ||
     file.mimetype === 'image/jpg' ||
     file.mimetype === 'image/jpeg'
   ) {
-    cb(null, true);   
+    cb(null, true);
   } else {
     cb(null, false);
   }
@@ -102,11 +101,13 @@ app.get('/500', errorController.get500);
 app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
-console.log('error',error)
+  // res.status(error.httpStatusCode).render(...);
+  // res.redirect('/500');
+  console.log('error',error)
   res.status(500).render('500', {
     pageTitle: 'Error!',
     path: '/500',
-    isAuthenticated: req.session.isLoggedIn 
+    isAuthenticated: req.session.isLoggedIn
   });
 });
 
